@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamachi the Psychotic Killer Press Kit</title>
+    <style>
+        @font-face {
+            font-family: 'FSEX300';
+            src: url('https://gavinoriley.github.io/assets/FSEX300.woff2') format('woff2'),
+                 url('https://gavinoriley.github.io/assets/FSEX300.woff') format('woff'),
+                 url('https://gavinoriley.github.io/assets/FSEX300.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        .navbar, .navbar a { font-family: 'FSEX300', Arial, sans-serif; }
+        * { cursor: url('https://gavinoriley.github.io/assets/sprCursor_3.png'), auto; }
+        body {
+            margin: 0 auto;
+            max-width: 1400px;
+            padding: 20px;
+            background-color: black;
+            background-image: url('https://gavinoriley.github.io/assets/hamabackgrounddark.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #8B0000;
+            padding: 12px 0;
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 26px;
+            text-shadow: 1px 1px 2px black;
+        }
+        .navbar a:hover { color: #ddd; }
+        .navbar a.devlog-link { color: #ffff00; }
+        .navbar a.devlog-link:hover { color: #cccc00; }
+        @media (max-width: 768px) {
+            .navbar { gap: 20px; flex-wrap: wrap; padding: 10px 0; }
+            .navbar a { font-size: 16px; }
+            .navbar a.play-game-link { display: none; }
+        }
+        h1 { text-align: center; color: white; margin-top: 90px; margin-bottom: 20px; }
+        h2.red { color: #ff3333; margin-top: 0; }
+        .factsheet strong { color: #cc33ff; }
+        .feature-title { color: #ffff00 !important; font-weight: bold; }
+        a { color: #00bfff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .top-section {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: flex-start;
+        }
+        .factsheet-block, .elevator-block {
+            flex: 1;
+            background-color: rgba(0,0,0,0.7);
+            padding: 25px;
+            border-radius: 10px;
+            min-width: 0;
+        }
+        @media (max-width: 900px) {
+            .top-section { flex-direction: column; }
+        }
+        .logos-container {
+            display: flex; justify-content: center; align-items: flex-end; flex-wrap: wrap;
+            gap: 40px; margin: 60px 0; background-color: rgba(0,0,0,0.7);
+            border-radius: 10px; padding: 30px;
+        }
+        .logo-item { text-align: center; }
+        .logo-image { width: 350px; height: auto; display: block; }
+        .download-button {
+            display: block; margin: 15px auto 0; padding: 12px 24px;
+            background-color: purple; color: white; text-align: center;
+            text-decoration: none; border-radius: 5px; font-weight: bold; width: 150px;
+        }
+        .download-button:hover { background-color: #800080; }
+        .videos-container {
+            display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;
+            margin: 60px 0; background-color: rgba(0,0,0,0.7);
+            border-radius: 10px; padding: 30px;
+        }
+        .video-wrapper { flex: 1 1 300px; max-width: 560px; }
+        .video-wrapper iframe { width: 100%; height: 315px; border: none; }
+        @media (max-width: 768px) { .video-wrapper iframe { height: 200px; } }
+        .more-info-section {
+            background-color: rgba(0,0,0,0.7);
+            border-radius: 10px; padding: 30px; margin: 40px 0;
+        }
+        .footer-image { text-align: center; margin: 60px auto 20px; }
+        .footer-image img { max-width: 100%; height: auto; }
+        /* Added for rounded main title logo */
+        .rounded-logo {
+            border-radius: 30px;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .rounded-logo img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        .screenshots-container {
+            display: flex; justify-content: center; align-items: flex-end; flex-wrap: wrap;
+            gap: 40px; margin: 60px 0; background-color: rgba(0,0,0,0.7);
+            border-radius: 10px; padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar gered">
+        <a href="https://hamachithepsychotickiller.com/about/">GAME INFO</a>
+        <a href="https://store.steampowered.com/app/3355690/Hamachi_the_Psychotic_Killer/" target="_blank">BUY EARLY ACCESS</a>
+        <a href="https://store.steampowered.com/news/app/3355690/view/678479604962297685" target="_blank" class="devlog-link">NEWS</a>
+        <a href="https://itch.io/embed-upload/13425866?color=333333" target="_blank" class="play-game-link">PLAY GAME</a>
+        <a href="https://hamachithepsychotickiller.com/devroom/">DEV ROOM</a>
+    </nav>
+    <h1>Hamachi the Psychotic Killer Press Kit</h1>
+   
+    <!-- Main title logo with rounded corners -->
+    <div style="text-align: center; margin-bottom: 50px;">
+        <div class="rounded-logo">
+            <img src="https://gavinoriley.github.io/assets/2HamachiTitleLogo.png" alt="Main Logo">
+        </div>
+    </div>
+    <!-- Side-by-side Factsheet & Elevator Pitch / Description / Our Story -->
+    <div class="top-section">
+        <div class="factsheet-block">
+            <h2 class="red">Factsheet</h2>
+            <p><strong>Official Game Title</strong><br>Hamachi the Psychotic Killer</p>
+            <p><strong>Developer</strong><br>Gavin O'Riley<br>Based in Los Angeles, USA<br>Self-Published</p>
+            <p><strong>Release Date/Window</strong><br>Planned for Summer 2026</p>
+            <p><strong>Genre</strong><br>Horror / Platformer</p>
+            <p><strong>Platforms</strong><br>Windows, Mac</p>
+            <p><strong>Number of Players</strong><br>Single Player</p>
+            <p><strong>Release Regions</strong><br>Worldwide</p>
+            <p><strong>Marketing Tagline</strong><br>The platformer game where you can play as the BAD GUY. (or the good guy.)</p>
+            <p><strong>Rating</strong><br>Blood and Gore, Violence</p>
+            <p><strong>Website</strong><br><a href="https://hamachithepsychotickiller.com" style="color: red;">hamachithepsychotickiller.com</a></p>
+            <p><strong>Steam Page</strong><br><a href="https://store.steampowered.com/app/3355690/Hamachi_the_Psychotic_Killer/" style="color: red;">https://store.steampowered.com/app/3355690/Hamachi_the_Psychotic_Killer/</a></p>
+            <p><strong>Features</strong><br>
+                <span class="feature-title">Play as the Villain.</span><br>
+                Control Hamachi and decide to Kill or Spare innocent lives.<br><br>
+                <span class="feature-title">Branching Morality</span><br>
+                Killing, Sparing or remaining Neutral leads to one of the three main endings of the game.<br><br>
+                <span class="feature-title">Multiple Routes</span><br>
+                Explore three distinct routes: Pacifist, Neutral, or Genocide, plus a hidden ending.<br><br>
+                <span class="feature-title">Police Threat</span><br>
+                Killing draws law enforcement, evade arrest or face the consequences for your crimes.<br><br>
+                <span class="feature-title">Boss Encounters</span><br>
+                Defeat Demonic Bosses or Spare them, and they may join your side.<br><br>
+                <span class="feature-title">Visuals and Sound</span><br>
+                All-original, vibrant pixel art paired with an energetic soundtrack.<br><br>
+                <span class="feature-title">Chainsaw Power-up</span><br>
+                Become temporarily Invincible and kill anything you touch.<br><br>
+                <span class="feature-title">Premium Sushi</span><br>
+                Sushi delivered by Penelope Pom Pom Pink to keep Hamachi at peak performance.<br><br>
+                <span class="feature-title">Kill Counter System</span><br>
+                A kill counter system keeps record of how many civilians you've killed. The world knows what you've done.<br><br>
+                <span class="feature-title">Created with love by mostly one person.</span>
+            </p>
+        </div>
+        <div class="elevator-block">
+            <h2 class="red">Elevator Pitch</h2>
+            <p>Hamachi the Psychotic Killer is a 2D horror platformer that finally lets you embrace the role of the villain. Take control of Hamachi, a cute but utterly deranged killer, and carve your own bloody (or surprisingly merciful) path through a world filled with innocent bystanders, demonic bosses, and law enforcement ready to take you down.</p>
+            <p>Will you indulge in mindless slaughter, spare lives to unlock hidden alliances, or walk the neutral line? Your choice shapes the story and leads to one of three dramatically different endings — plus a secret fourth ending for the truly dedicated.</p>
+            <p>Recruit spared bosses, evade (or brutally eliminate) the police when your kill count gets too high, unleash temporary invincibility with the chainsaw power-up, and stay topped up in HP with Premium Sushi deliveries from Penelope Pom Pom Pink.</p>
+            <p>With its adorable yet gruesome pixel-art style, energetic soundtrack, and kill count system, Hamachi the Psychotic Killer delivers a fresh, chaotic twist on the classic platformer formula — all hand-crafted with love by a (mostly) one-person team.</p>
+            <h2 class="red">Description</h2>
+            <p>In Hamachi the Psychotic Killer, you play as the titular Hamachi — an unhinged, axe-wielding anti-hero on a rampage. Decide the fate of everyone you meet: kill, spare, or ignore them entirely. Your actions dramatically change the end, and which characters will stand with (or against) you.</p>
+            <p>Three main routes — Pacifist, Neutral, and Genocide — plus a hidden ending ensure massive replay value. Killing attracts the police, turning your first encounter with the law into a high-stakes chase. Spare certain demonic bosses and they’ll join your party, bringing their assistance in the final battle on a True Pacifist route.</p>
+            <p>Hand-drawn vibrant pixel art, a pumping original soundtrack, and a twisted sense of humor make this solo-dev passion project stand out in the horror-platformer genre.</p>
+            <h2 class="red">Our Story</h2>
+            <p>Hamachi the Psychotic Killer is created by Gavin O'Riley, an independent developer based in Los Angeles, USA. What started as an idea — “Normally you always play as the hero in platformer games, What if the roles were reversed and you were the bad guy?” — has grown into a full-fledged passion project packed with branching paths, recruitable bosses, and plenty of gore (or surprisingly wholesome moments).</p>
+            <p>Built almost entirely by one person, with occasional help from talented freelancers for music and additional art, the game is a love letter to classic platformers, morality systems, and over-the-top villainy.</p>
+        </div>
+    </div>
+    <h2 class="red">Logos & Assets</h2>
+    <div class="logos-container">
+        <div class="logo-item">
+            <img src="https://gavinoriley.github.io/assets/logohamachi1.png" alt="Logo Variant 1" class="logo-image">
+            <a href="https://gavinoriley.github.io/assets/logohamachi1.png" download class="download-button">Download</a>
+        </div>
+        <div class="logo-item">
+            <img src="https://gavinoriley.github.io/assets/logohamachi2.png" alt="Logo Variant 2" class="logo-image">
+            <a href="https://gavinoriley.github.io/assets/logohamachi2.png" download class="download-button">Download</a>
+        </div>
+    </div>
+    <h2 class="red">Videos</h2>
+    <div class="videos-container">
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/QGEuMkrxymU" allowfullscreen></iframe>
+        </div>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/41vjuRxBotI" allowfullscreen></iframe>
+        </div>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/uzQPITbKHIw" allowfullscreen></iframe>
+        </div>
+    </div>
+    <h2 class="red">Screenshots</h2>
+    <div class="screenshots-container">
+    </div>
+    <div class="more-info-section">
+        <h2>More Information</h2>
+        <p><a href="https://drive.google.com/file/d/10SetbMLgk4I8PxJaBWx2CcKMJ2e4dsxY/view" target="_blank">
+            Download our Asset Kit of Game Screenshots, GIFs, and Art Assets
+        </a></p>
+    </div>
+    <div class="footer-image">
+        <img src="https://gavinoriley.github.io/assets/3dspin.gif" alt="Footer Animation">
+    </div>
+</body>
+</html>
