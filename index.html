@@ -120,6 +120,86 @@
             gap: 40px; margin: 60px 0; background-color: rgba(0,0,0,0.7);
             border-radius: 10px; padding: 30px;
         }
+        /* Carousel styles */
+        .carousel {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+        }
+        .carousel-inner {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .carousel-item {
+            display: none;
+            width: 100%;
+        }
+        .carousel-item.active {
+            display: block;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+            padding-top: 60px;
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 1200px;
+            cursor: pointer;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -131,7 +211,7 @@
         <a href="https://hamachithepsychotickiller.com/devroom/">DEV ROOM</a>
     </nav>
     <h1>Hamachi the Psychotic Killer Press Kit</h1>
-   
+ 
     <!-- Main title logo with rounded corners -->
     <div style="text-align: center; margin-bottom: 50px;">
         <div class="rounded-logo">
@@ -215,6 +295,51 @@
     </div>
     <h2 class="red">Screenshots</h2>
     <div class="screenshots-container">
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://gavinoriley.github.io/assets/presshamafront.gif" alt="Screenshot 1" onclick="openModal(this.src)">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://gavinoriley.github.io/assets/presshama0.png" alt="Screenshot 2" onclick="openModal(this.src)">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://gavinoriley.github.io/assets/presshama1.png" alt="Screenshot 3" onclick="openModal(this.src)">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://gavinoriley.github.io/assets/presshama2.png" alt="Screenshot 4" onclick="openModal(this.src)">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://gavinoriley.github.io/assets/presshama3.png" alt="Screenshot 5" onclick="openModal(this.src)">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://gavinoriley.github.io/assets/presshama4.png" alt="Screenshot 6" onclick="openModal(this.src)">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://gavinoriley.github.io/assets/presshama5.png" alt="Screenshot 7" onclick="openModal(this.src)">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://gavinoriley.github.io/assets/presshama6.png" alt="Screenshot 8" onclick="openModal(this.src)">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://gavinoriley.github.io/assets/presshama7.png" alt="Screenshot 9" onclick="openModal(this.src)">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://gavinoriley.github.io/assets/presshama8.png" alt="Screenshot 10" onclick="openModal(this.src)">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://gavinoriley.github.io/assets/presshama9.png" alt="Screenshot 11" onclick="openModal(this.src)">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://gavinoriley.github.io/assets/presshama10.png" alt="Screenshot 12" onclick="openModal(this.src)">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://gavinoriley.github.io/assets/presshama11.png" alt="Screenshot 13" onclick="openModal(this.src)">
+                </div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
     </div>
     <div class="more-info-section">
         <h2>More Information</h2>
@@ -225,5 +350,49 @@
     <div class="footer-image">
         <img src="https://gavinoriley.github.io/assets/3dspin.gif" alt="Footer Animation">
     </div>
+    <!-- Modal for full screen image -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01" onclick="closeModal()">
+    </div>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("carousel-item");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        function openModal(src) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("img01");
+            modal.style.display = "block";
+            modalImg.src = src;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        // Close modal if background is clicked
+        window.onclick = function(event) {
+            var modal = document.getElementById("myModal");
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
