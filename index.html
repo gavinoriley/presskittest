@@ -59,7 +59,7 @@
         h2.red { color: #ff3333; margin-top: 0; }
         .factsheet strong { color: #cc33ff; }
         .feature-title { color: #ffff00 !important; font-weight: bold; }
-        a { color: #00bfff; text-decoration: none; }
+        a { color: #00bfff; text-decoration: none; overflow-wrap: break-word; }
         a:hover { text-decoration: underline; }
         .top-section {
             display: flex;
@@ -207,6 +207,35 @@
             font-size: 16px;
             color: #fff;
         }
+        /* Screenshot caption styles */
+        .screenshot-caption {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #fff;
+        }
+        /* Additional responsive styles for phones */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            h1 { margin-top: 120px; }
+            .navbar { padding: 5px 0; gap: 10px; }
+            .navbar a { font-size: 14px; }
+            .top-section { gap: 20px; }
+            .factsheet-block, .elevator-block { padding: 15px; }
+            .top-section p, .top-section span { font-size: 14px; overflow-wrap: break-word; }
+            .top-section a { word-break: break-all; }
+            .logos-container { gap: 20px; padding: 20px; }
+            .logo-image { width: 250px; }
+            .videos-container { gap: 20px; padding: 20px; }
+            .video-wrapper { max-width: 100%; }
+            .video-wrapper iframe { height: 180px; }
+            .video-caption { font-size: 14px; }
+            .screenshot-caption { font-size: 14px; }
+            .screenshots-container { gap: 20px; padding: 20px; }
+            .carousel { max-width: 100%; }
+            .more-info-section { padding: 20px; }
+            .more-info-section h2, .more-info-section p { font-size: 14px; }
+        }
     </style>
 </head>
 <body>
@@ -218,7 +247,6 @@
         <a href="https://hamachithepsychotickiller.com/devroom/">DEV ROOM</a>
     </nav>
     <h1>Hamachi the Psychotic Killer Press Kit</h1>
- 
     <!-- Main title logo with rounded corners -->
     <div style="text-align: center; margin-bottom: 50px;">
         <div class="rounded-logo">
@@ -264,12 +292,12 @@
         </div>
         <div class="elevator-block">
             <h2 class="red">Elevator Pitch</h2>
-            <p>Hamachi the Psychotic Killer is a 2D horror platformer that finally lets you embrace the role of the villain. Take control of Hamachi, a cute but utterly deranged killer, and carve your own bloody (or surprisingly merciful) path through a world filled with innocent bystanders, demonic bosses, and law enforcement ready to take you down.</p>
+            <p>Hamachi the Psychotic Killer is a 2D horror platformer that finally lets you embrace the role of the villain. Take control of Hamachi, a cute but utterly deranged demon possessed killer, and carve your own bloody (or surprisingly merciful) path through a world filled with innocent bystanders, demonic bosses, and law enforcement ready to take you down.</p>
             <p>Will you indulge in mindless slaughter, spare lives to unlock hidden alliances, or walk the neutral line? Your choice shapes the story and leads to one of three dramatically different endings — plus a secret fourth ending for the truly dedicated.</p>
             <p>Recruit spared bosses, evade (or brutally eliminate) the police when your kill count gets too high, unleash temporary invincibility with the chainsaw power-up, and stay topped up in HP with Premium Sushi deliveries from Penelope Pom Pom Pink.</p>
             <p>With its adorable yet gruesome pixel-art style, energetic soundtrack, and kill count system, Hamachi the Psychotic Killer delivers a fresh, chaotic twist on the classic platformer formula — all hand-crafted with love by a (mostly) one-person team.</p>
             <h2 class="red">Description</h2>
-            <p>In Hamachi the Psychotic Killer, you play as the titular Hamachi — an unhinged, axe-wielding anti-hero on a rampage. Decide the fate of everyone you meet: kill, spare, or ignore them entirely. Your actions dramatically change the end, and which characters will stand with (or against) you.</p>
+            <p>In Hamachi the Psychotic Killer, you play as a demon possessed piece of tofu named Hamachi — an unhinged, axe-wielding anti-hero on a rampage under the control of the Great Demon Queen, "Demon Queen Deity". Decide the fate of everyone you meet: kill, spare, or ignore them entirely. Your actions dramatically change the end, and which characters will stand with (or against) you.</p>
             <p>Three main routes — Pacifist, Neutral, and Genocide — plus a hidden ending ensure massive replay value. Killing attracts the police, turning your first encounter with the law into a high-stakes chase. Spare certain demonic bosses and they’ll join your party, bringing their assistance in the final battle on a True Pacifist route.</p>
             <p>Hand-drawn vibrant pixel art, a pumping original soundtrack, and a twisted sense of humor make this solo-dev passion project stand out in the horror-platformer genre.</p>
             <h2 class="red">Our Story</h2>
@@ -292,7 +320,7 @@
     <div class="videos-container">
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/QGEuMkrxymU" allowfullscreen></iframe>
-            <p class="video-caption">Overview Trailer</p>
+            <p class="video-caption">Prerelease/Overview Trailer</p>
         </div>
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/41vjuRxBotI" allowfullscreen></iframe>
@@ -300,39 +328,48 @@
         </div>
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/uzQPITbKHIw" allowfullscreen></iframe>
-            <p class="video-caption">Sun/Moon Title Screen</p>
+            <p class="video-caption">Sun/Moon Title Screen Timelapse</p>
         </div>
     </div>
     <h2 class="red">Screenshots</h2>
     <div class="screenshots-container">
-        <div class="carousel">
+        <div class="carousel" id="screenshot-carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="https://gavinoriley.github.io/assets/presshamafront.gif" alt="Screenshot 1" onclick="openModal(this.src)">
+                    <p class="screenshot-caption">Hamachi and Demon Queen Deity</p>
                 </div>
                 <div class="carousel-item">
                     <img src="https://gavinoriley.github.io/assets/presshama0.png" alt="Screenshot 2" onclick="openModal(this.src)">
+                    <p class="screenshot-caption">The title screen revolves from day to night based on your internal clock. I wonder what happens during night time?</p>
                 </div>
                 <div class="carousel-item">
                     <img src="https://gavinoriley.github.io/assets/presshama1.png" alt="Screenshot 3" onclick="openModal(this.src)">
+                    <p class="screenshot-caption">Hamachi being possessed by Demon Queen Deity</p>
                 </div>
                 <div class="carousel-item">
                     <img src="https://gavinoriley.github.io/assets/presshama2.png" alt="Screenshot 4" onclick="openModal(this.src)">
+                    <p class="screenshot-caption">Claiming his victims..</p>
                 </div>
                 <div class="carousel-item">
                     <img src="https://gavinoriley.github.io/assets/presshama3.png" alt="Screenshot 5" onclick="openModal(this.src)">
+                    <p class="screenshot-caption">Invincibility!</p>
                 </div>
                 <div class="carousel-item">
                     <img src="https://gavinoriley.github.io/assets/presshama4.png" alt="Screenshot 6" onclick="openModal(this.src)">
+                    <p class="screenshot-caption">Somethings off..</p>
                 </div>
                 <div class="carousel-item">
                     <img src="https://gavinoriley.github.io/assets/presshama5.png" alt="Screenshot 7" onclick="openModal(this.src)">
+                    <p class="screenshot-caption">they're all dead.</p>
                 </div>
                 <div class="carousel-item">
                     <img src="https://gavinoriley.github.io/assets/presshama6.png" alt="Screenshot 8" onclick="openModal(this.src)">
+                    <p class="screenshot-caption">The first demonic boss encounter.</p>
                 </div>
                 <div class="carousel-item">
                     <img src="https://gavinoriley.github.io/assets/presshama7.png" alt="Screenshot 9" onclick="openModal(this.src)">
+                    <p class="screenshot-caption">PINK PARADISE</p>
                 </div>
                 <div class="carousel-item">
                     <img src="https://gavinoriley.github.io/assets/presshama8.png" alt="Screenshot 10" onclick="openModal(this.src)">
@@ -347,8 +384,33 @@
                     <img src="https://gavinoriley.github.io/assets/presshama11.png" alt="Screenshot 13" onclick="openModal(this.src)">
                 </div>
             </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
+        </div>
+    </div>
+    <h2 class="red">Community Fan Art</h2>
+    <div class="screenshots-container">
+        <div class="carousel" id="fanart-carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://gavinoriley.github.io/assets/communityfan1.jpg" alt="Fan Art 1" onclick="openModal(this.src)">
+                    <p class="screenshot-caption">credits: forestdraw</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://gavinoriley.github.io/assets/communityfan2.jpg" alt="Fan Art 2" onclick="openModal(this.src)">
+                    <p class="screenshot-caption">credits: Gameplanet Plays Games</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://gavinoriley.github.io/assets/communityfan3.jpg" alt="Fan Art 3" onclick="openModal(this.src)">
+                    <p class="screenshot-caption">credits: nachinachi10043</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://gavinoriley.github.io/assets/communityfan4.jpg" alt="Fan Art 4" onclick="openModal(this.src)">
+                    <p class="screenshot-caption">credits: Oz3l_art</p>
+                </div>
+            </div>
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
         </div>
     </div>
     <div class="more-info-section">
@@ -366,23 +428,30 @@
         <img class="modal-content" id="img01" onclick="closeModal()">
     </div>
     <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
+        function initCarousel(carouselId) {
+            let slideIndex = 1;
+            showSlides(slideIndex);
 
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("carousel-item");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
             }
-            slides[slideIndex - 1].style.display = "block";
+
+            function showSlides(n) {
+                let slides = document.querySelectorAll(`#${carouselId} .carousel-item`);
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slides[slideIndex - 1].style.display = "block";
+            }
+
+            document.querySelector(`#${carouselId} .prev`).onclick = () => plusSlides(-1);
+            document.querySelector(`#${carouselId} .next`).onclick = () => plusSlides(1);
         }
+
+        initCarousel('screenshot-carousel');
+        initCarousel('fanart-carousel');
 
         function openModal(src) {
             var modal = document.getElementById("myModal");
